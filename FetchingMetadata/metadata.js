@@ -6,7 +6,9 @@ const file = process.argv[2];
 
 // print metadata function
 function printMetadata(file) {
+    // wrapped in a try/catch to handle invalid file paths
   try {
+      // statSync is a synchronous function that returns info about the file path that is passed to it, it can be a file or directory, info returned is in form of stats object
     const fileStats = fs.statSync(file);
     console.log(fileStats);
   } catch (error) {
